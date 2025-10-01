@@ -1,0 +1,67 @@
+package com.simplecoding.cheforest.jpa.auth.entity;
+
+import com.simplecoding.cheforest.jpa.chat.entity.Message;
+import com.simplecoding.cheforest.jpa.common.BaseTimeEntity;
+import jakarta.persistence.*;
+import lombok.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+
+@Entity
+@Table(name = "MEMBER")
+@SequenceGenerator(
+        name = "MEMBER_SEQ_JPA",
+        sequenceName = "MEMBER_SEQ",
+        allocationSize = 1
+)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Member extends BaseTimeEntity implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ_JPA")
+    private Long memberIdx;   // PK (DB 컬럼: MEMBERIDX 로 맞춰야 함)
+
+    @Column(name = "ID", nullable = false, unique = true)
+    private String loginId;  // 로그인 ID
+    private String password;
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;        // USER / ADMIN
+    private String nickname;
+    private String profile;
+    private String tempPasswordYn = "N";  // 기본값 N
+    private String socialId;   // 카카오, 구글, 네이버 식별자
+    private String provider;   // "KAKAO", "GOOGLE", "NAVER"
+    private Long point = 0L;      // 누적 포인트
+    private String grade = "씨앗"; // 회원 등급
+
+    // made by yes_ung 09/25
+    private Date lastLoginTime;
+    private String suspension;
+
+    public enum Role {
+        USER, ADMIN, LEFT
+    }
+
+    // 채팅용
+    @OneToMany(mappedBy = "sender")
+    private List<Message> messages = new ArrayList<>();
+
+    // 포인트 증가 + 등급 변경 로직
+    public void addPoint(long value) {
+        this.point += value;
+
+        if (point >= 4000) this.grade = "숲";
+        else if (point >= 3000) this.grade = "나무";
+        else if (point >= 2000) this.grade = "새싹";
+        else if (point >= 1000) this.grade = "뿌리";
+        else this.grade = "씨앗";
+    }
+}

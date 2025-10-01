@@ -1,0 +1,840 @@
+/* CheForest 마이페이지 스타일 */
+
+/* 메인 컨테이너 */
+.mypage-main {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.mypage-main .container {
+    max-width : 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* 페이지 헤더 */
+.mypage-header {
+    background: linear-gradient(to right, #ec4899, #f97316);
+    color: white;
+    padding: 48px 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.avatar-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.profile-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.level-icon {
+    font-size: 16px;
+}
+
+.join-date {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.level-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar {
+    width: 128px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+}
+
+/* 통계 섹션 */
+.stats-section {
+    padding: 32px 0;
+    background: #f8f9fa;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-recipes {
+    background: linear-gradient(135deg, #fff7ed, #fed7aa);
+    border: 1px solid #fdba74;
+}
+
+.stat-comments {
+    background: linear-gradient(135deg, #fdf2f8, #fbcfe8);
+    border: 1px solid #f9a8d4;
+}
+
+.stat-likes {
+    background: linear-gradient(135deg, #fef2f2, #fecaca);
+    border: 1px solid #f87171;
+}
+
+.stat-views {
+    background: linear-gradient(135deg, #eff6ff, #bfdbfe);
+    border: 1px solid #60a5fa;
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1f2937;
+}
+
+.stat-recipes .stat-number {
+    color: #ea580c;
+}
+
+.stat-comments .stat-number {
+    color: #db2777;
+}
+
+.stat-likes .stat-number {
+    color: #dc2626;
+}
+
+.stat-views .stat-number {
+    color: #2563eb;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* 메인 컨텐츠 섹션 */
+.content-section {
+    padding: 32px 0;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    gap: 32px;
+}
+
+/* 사이드바 */
+.sidebar {
+    width: 256px;
+}
+
+.sidebar-content {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    position: sticky;
+    top: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1f2937;
+}
+
+.sidebar-icon {
+    color: #f97316;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background: #f3f4f6;
+}
+
+.menu-item.active {
+    background: linear-gradient(to right, #ec4899, #f97316);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.menu-icon {
+    font-size: 16px;
+}
+
+.menu-text {
+    font-weight: 500;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    flex: 1;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-grid {
+    display: grid;
+    gap: 24px;
+}
+
+/* 정보 카드 */
+.info-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
+    color: #ea580c;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+/* 등급 현황 */
+.level-status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.current-level h4,
+.next-level h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #374151;
+}
+
+.level-display {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.level-tree {
+    background: linear-gradient(135deg, #f3e8ff, #ddd6fe);
+    border: 1px solid #c4b5fd;
+}
+
+.level-forest {
+    background: linear-gradient(135deg, #fdf2f8, #fbcfe8);
+    border: 1px solid #f9a8d4;
+}
+
+.level-emoji {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.level-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.level-tree .level-name {
+    color: #7c3aed;
+}
+
+.level-forest .level-name {
+    color: #db2777;
+}
+
+.level-desc {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* 활동 현황 */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-label {
+    font-size: 14px;
+    color: #374151;
+}
+
+.activity-badge {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+}
+
+/* 탭 헤더 */
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.tab-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #ec4899, #f97316);
+}
+
+.btn-edit,
+.btn-view {
+    background: white;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-edit:hover,
+.btn-view:hover {
+    background: #fff7ed;
+}
+
+.btn-delete {
+    background: white;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-delete:hover {
+    background: #fef2f2;
+}
+
+.btn-view-recipe {
+    background: white;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-view-recipe:hover {
+    background: #fff7ed;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-icon {
+    font-size: 14px;
+}
+
+.btn-arrow {
+    font-size: 12px;
+}
+
+/* 레시피 목록 */
+.recipe-list,
+.comment-list,
+.liked-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recipe-item,
+.comment-item,
+.liked-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease;
+}
+
+.recipe-item:hover,
+.comment-item:hover,
+.liked-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.recipe-image,
+.liked-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.recipe-info,
+.liked-info {
+    flex: 1;
+}
+
+.recipe-title,
+.liked-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.recipe-meta,
+.liked-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.recipe-category,
+.liked-category {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    border: 1px solid #d1d5db;
+}
+
+.recipe-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-icon {
+    font-size: 12px;
+}
+
+.recipe-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 댓글 아이템 */
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.comment-recipe-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ea580c;
+}
+
+.comment-date,
+.liked-date {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.comment-content {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 좋아요 아이템 */
+.liked-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.liked-author {
+    color: #6b7280;
+}
+
+/* 설정 */
+.settings-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.settings-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.danger-card {
+    border-color: #fca5a5;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.danger-zone {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.danger-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 8px;
+}
+
+.danger-text {
+    font-size: 14px;
+    color: #7f1d1d;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .content-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 24px;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 1;
+    }
+
+    .main-content {
+        order: 2;
+    }
+
+    .sidebar-content {
+        position: static;
+    }
+
+    .menu-list {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 4px;
+    }
+
+    .menu-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .mypage-main .container { padding: 0 12px; }
+
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .profile-title {
+        font-size: 24px;
+    }
+
+    .profile-meta {
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .level-status {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .recipe-item,
+    .liked-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .recipe-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mypage-header {
+        padding: 32px 0;
+    }
+
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-title {
+        font-size: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+}
